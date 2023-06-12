@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS which you need for blurred box */
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  background-image: url("./../src/img_project/bg.jpg");
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Login Page */
+.login-page {
+  width: 100%;
+  height: 100%;
+}
+
+.login-card {
+  background-color: #fff;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  padding: 50px;
+}
+
+.link-primary {
+  color: #3897f0;
+}
+
+.input-group-append {
+  cursor: pointer;
+}
+
+.lampiran {
+  max-width: 500px;
+}

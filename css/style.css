@@ -1,0 +1,110 @@
+body {
+  margin: 0 auto;
+  background-color: #cdcdcd;
+  scroll-behavior: smooth;
+}
+
+.card {
+  box-shadow: 5px 9px 29px -3px rgba(0, 0, 0, 0.48);
+  transition: 500ms;
+}
+.card:hover {
+  box-shadow: 5px 9px 29px 1px rgba(0, 0, 0, 0.48);
+}
+
+.navbar {
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.section2 {
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  height: fit-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section4 {
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  height: fit-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.isisection2 {
+  width: 900px;
+}
+
+.gambar img {
+  border-radius: 20px;
+}
+
+.cardscroll {
+  overflow: scroll;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero h1 {
+  font-weight: 900;
+}
+
+.hiasan-satu {
+  position: absolute;
+  z-index: 999;
+  margin-left: -350px;
+  margin-top: 140px;
+  animation: anime 1s infinite ease-in-out alternate;
+  -webkit-animation: anime 1s infinite ease-in-out alternate;
+  filter: blur(1px);
+}
+
+.hiasan-dua {
+  position: absolute;
+  z-index: 999;
+  margin-left: -30px;
+  margin-top: -30px;
+  animation: anime 1s infinite ease-in-out alternate;
+  -webkit-animation: anime 1s infinite ease-in-out alternate;
+  filter: blur(1px);
+  animation-delay: 0.6s;
+}
+
+.hiasan-tiga {
+  position: absolute;
+  z-index: 999;
+  margin-left: 500px;
+  margin-top: 30px;
+  animation: anime 1s infinite ease-in-out alternate;
+  -webkit-animation: anime 1s infinite ease-in-out alternate;
+  filter: blur(1px);
+  animation-delay: 0.3s;
+}
+
+#gambarbesar {
+  position: absolute;
+  z-index: 999;
+  margin-left: -500px;
+}
+
+@keyframes anime {
+  100% {
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -o-transform: translateY(20px);
+  }
+}

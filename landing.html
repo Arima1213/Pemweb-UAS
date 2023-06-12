@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <div class="outer">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary text-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+            <div class="col">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Disabled</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- end navbar  -->
+
+      <!-- Carousel  -->
+      <div id="carouselExampleSlidesOnly">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="src/images/carouselPNG (1).png"
+              class="d-block w-100"
+              alt="carouselPNG (1).png"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- end carousel  -->
+
+      <div class="row mx-5 my-5">
+        <div class="form col-6">
+          <form action="" id="donation-form">
+            <div class="mb-3">
+              <h3>Form Donasi</h3>
+            </div>
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama Lengkap</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                placeholder="Masukkan nama lengkap"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="nominal" class="form-label">Nominal Donasi</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="nominal"
+                  id="nominal1"
+                  value="300000"
+                />
+                <label class="form-check-label" for="nominal1">300.000</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="nominal"
+                  id="nominal2"
+                  value="500000"
+                />
+                <label class="form-check-label" for="nominal2">500.000</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="nominal"
+                  id="nominal3"
+                  value="1000000"
+                />
+                <label class="form-check-label" for="nominal3">1.000.000</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="nominal"
+                  id="nominal4"
+                  value="1500000"
+                />
+                <label class="form-check-label" for="nominal4">1.500.000</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="telepon" class="form-label">Nomor Telepon</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="telepon"
+                placeholder="Masukkan nomor telepon"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="metode" class="form-label">Metode Pembayaran</label>
+              <select class="form-select" id="metode">
+                <option value="transfer">Transfer Bank</option>
+                <option value="kartu_kredit">Kartu Kredit</option>
+                <option value="ewallet">E-Wallet</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="doa" class="form-label">Doa</label>
+              <textarea
+                class="form-control"
+                id="doa"
+                rows="3"
+                placeholder="Tuliskan doa yang ingin disampaikan"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="foto" class="form-label">Upload Foto</label>
+              <input class="form-control" type="file" id="foto" onchange="previewFoto" />
+            </div>
+            <div class="mb-3">
+              <img src="" id="preview" alt="Preview Foto" style="max-width: 200px" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <div class="nama"></div>
+          <div class="card-body"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function previewFoto(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+          var preview = document.getElementById("preview");
+          preview.src = reader.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    </script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
