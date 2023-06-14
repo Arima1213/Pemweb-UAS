@@ -81,19 +81,19 @@ body {
   background: #fff;
 }
 .card {
-  box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+  box-shadow: 5px 9px 29px -3px rgba(0, 0, 0, 0.48);
   transition: 500ms;
 }
 .card:hover {
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  box-shadow: 5px 9px 29px 1px rgba(0, 0, 0, 0.48);
 }
-
 .card-body i {
   font-size: 50px;
 }
 .card-body i {
   font-size: 20px;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .carousel-caption {
     bottom: 370px;

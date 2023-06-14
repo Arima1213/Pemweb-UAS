@@ -100,6 +100,9 @@ $stmtt->close();
 <head>
     <title>Profil Pengguna</title>
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styleindex.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .profile-img {
@@ -149,9 +152,6 @@ $stmtt->close();
                             <a class="nav-link" href="index.php#urgent">Urgent</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php#testimoni">Testimoni</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="index.php#project">Project</a>
                         </li>
                         <li class="nav-item">
@@ -169,7 +169,7 @@ $stmtt->close();
                         <li class="nav-item">
                             <a class="nav-link" href="profilepage.php">
                                 <?php
-                                require_once "koneksi.php";
+
                                 // Query untuk mengambil data user berdasarkan username
                                 $stmt = $conn->prepare("SELECT foto_profil FROM db_takaful.users WHERE username = ?");
                                 $stmt->bind_param("s", $username);
@@ -184,11 +184,7 @@ $stmtt->close();
                                     echo '<img src="src/img_profil_user/' . $foto_profil . '" alt="Foto Profil" width="30" height="30" class="rounded-circle">';
                                 } else {
                                     echo "data tidak ada";
-                                    // Handle jika data user tidak ditemukan
                                 }
-                                $stmt->close();
-
-
                                 ?>
                             </a>
                         </li>
@@ -196,6 +192,7 @@ $stmtt->close();
                 </div>
             </div>
         </nav>
+
 
 
         <div class="container">

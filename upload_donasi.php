@@ -6,11 +6,11 @@ $password = "";
 $dbname = "db_takaful";
 
 require_once "koneksi.php";
+
 // Memproses data yang dikirim melalui form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Validasi jika data telah terisi
-  if (!empty($_POST["title"]) && !empty($_POST["target_donasi"]) && 0 >= ($_POST["uang_donasi"]) && !empty($_POST["target_hari"]) && !empty($_POST["deskripsi1"])) {
-
+  if (!empty($_POST["title"]) && !empty($_POST["target_donasi"]) && $_POST["uang_donasi"] >= 0 && !empty($_POST["target_hari"]) && !empty($_POST["deskripsi1"])) {
     $title = $_POST["title"];
     $target_donasi = $_POST["target_donasi"];
     $uang_donasi = $_POST["uang_donasi"];
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tgl_dibuat = date("Y-m-d");
 
     // Mendefinisikan folder untuk menyimpan gambar
-    $folder_thumnail = './src/img_upload/thumbnail/';
+    $folder_thumbnail = './src/img_upload/thumbnail/';
     $folder_images = './src/img_upload/images/';
 
     $nama_thumbnail = $_FILES['thumbnail']['name'];
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sumber_gambar3 = $_FILES["gambar3"]["tmp_name"];
     $sumber_gambar4 = $_FILES["gambar4"]["tmp_name"];
 
-    move_uploaded_file($sumber_thumbnail, $folder_thumnail . $nama_thumbnail);
+    move_uploaded_file($sumber_thumbnail, $folder_thumbnail . $nama_thumbnail);
     move_uploaded_file($sumber_gambar1, $folder_images . $nama_gambar1);
     move_uploaded_file($sumber_gambar2, $folder_images . $nama_gambar2);
     move_uploaded_file($sumber_gambar3, $folder_images . $nama_gambar3);
@@ -52,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       // Memasukkan data ke dalam tabel open_donasi
       $stmt = $conn->prepare("INSERT INTO open_donasi (thumbnail, title, target_donasi, uang_donasi, target_hari, deskripsi1, gambar1, gambar2, gambar3, gambar4, tgl_dibuat) 
-          VALUES ('$nama_thumbnail', '$title', $target_donasi, $uang_donasi, $target_hari, '$deskripsi1', '$nama_gambar1', '$nama_gambar2', '$nama_gambar3', '$nama_gambar4','$tgl_dibuat')");
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+      $stmt->bind_param("ssdiissssss", $nama_thumbnail, $title, $target_donasi, $uang_donasi, $target_hari, $deskripsi1, $nama_gambar1, $nama_gambar2, $nama_gambar3, $nama_gambar4, $tgl_dibuat);
 
       if ($stmt->execute()) {
         $notification = "Data berhasil disimpan.";
@@ -68,8 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $notification = "Semua field harus diisi.";
   }
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

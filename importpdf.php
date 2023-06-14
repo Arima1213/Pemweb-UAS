@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('vendor/autoload.php');
+require_once "koneksi.php";
 
 use Dompdf\Dompdf;
 
@@ -13,16 +14,20 @@ if (!isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 
-// Koneksi ke database
-$conn = new mysqli('localhost', 'root', '', 'db_takaful');
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $nama = $row['nama'];
 }
 
 $font = "adelia.ttf";
 $image = imagecreatefrompng("./src/sertif/Certificate.png");
 $textColour = imagecolorallocate($image, 0, 0, 0);
-$name = $username = $_SESSION['username'];
+$name = $nama;
 $coords = imagettfbbox(100, 0, $font, $name); // Mengubah ukuran teks menjadi 100
 
 $width = imagesx($image); // Lebar gambar
@@ -31,7 +36,7 @@ $textWidth = $coords[2] - $coords[0]; // Lebar teks
 // Menghitung koordinat X agar teks berada di tengah gambar
 $x = ($width - $textWidth) / 2;
 
-imagettftext($image, 100, 0, $x, 600, $textColour, $font, $name); // Mengubah ukuran teks menjadi 100
+imagettftext($image, 100, 0, $x, 620, $textColour, $font, $name); // Mengubah ukuran teks menjadi 100
 
 // Menyimpan gambar sertifikat dalam format PNG
 $imagePath = "./src/sertif/" . $name . ".png";
