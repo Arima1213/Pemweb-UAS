@@ -230,7 +230,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <button type="submit" class="btn btn-outline-info text-dark" style="width: 100%;">Riwayat Donasi</button>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>

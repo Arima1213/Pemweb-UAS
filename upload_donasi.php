@@ -1,9 +1,4 @@
 <?php
-// Koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_takaful";
 
 require_once "koneksi.php";
 
@@ -14,7 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST["title"];
     $target_donasi = $_POST["target_donasi"];
     $uang_donasi = $_POST["uang_donasi"];
+
     $target_hari = $_POST["target_hari"];
+    $target_hari_sql = date("Y-m-d", strtotime($target_hari));
+
     $deskripsi1 = $_POST["deskripsi1"];
     $tgl_dibuat = date("Y-m-d");
 
@@ -51,12 +49,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $notification = "Data sudah ada.";
     } else {
       // Memasukkan data ke dalam tabel open_donasi
-      $stmt = $conn->prepare("INSERT INTO open_donasi (thumbnail, title, target_donasi, uang_donasi, target_hari, deskripsi1, gambar1, gambar2, gambar3, gambar4, tgl_dibuat) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-      $stmt->bind_param("ssdiissssss", $nama_thumbnail, $title, $target_donasi, $uang_donasi, $target_hari, $deskripsi1, $nama_gambar1, $nama_gambar2, $nama_gambar3, $nama_gambar4, $tgl_dibuat);
+      $query = "INSERT INTO open_donasi (thumbnail, title, target_donasi, uang_donasi, target_hari, deskripsi1, gambar1, gambar2, gambar3, gambar4, tgl_dibuat) 
+          VALUES($nama_thumbnail, $title, $target_donasi, $uang_donasi, $target_hari_sql, $deskripsi1, $nama_gambar1, $nama_gambar2, $nama_gambar3, $nama_gambar4, $tgl_dibuat)";
+      $query_run = mysqli_query($conn, $query);
 
-      if ($stmt->execute()) {
+      if ($query_run) {
         $notification = "Data berhasil disimpan.";
+        header('Location: admin.php');
+        exit();
       } else {
         $notification = "Terjadi kesalahan: " . $stmt->error;
       }
@@ -69,74 +69,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $notification = "Semua field harus diisi.";
   }
 }
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
-  <title>Input Data</title>
-</head>
-
-<body>
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <?php if (isset($notification)) : ?>
-          <div class="alert alert-info mt-3">
-            <?php echo $notification; ?>
-          </div>
-        <?php endif; ?>
-        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
-          <div class="mb-3">
-            <label for="thumbnail" class="form-label">Thumbnail</label>
-            <input class="form-control" type="file" name="thumbnail" required>
-          </div>
-          <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" name="title" required>
-          </div>
-          <div class="mb-3">
-            <label for="target_donasi" class="form-label">Target Donasi</label>
-            <input type="number" class="form-control" name="target_donasi" required>
-          </div>
-          <div class="mb-3">
-            <label for="uang_donasi" class="form-label">Uang Donasi</label>
-            <input type="number" class="form-control" name="uang_donasi" required>
-          </div>
-          <div class="mb-3">
-            <label for="target_hari" class="form-label">Target Hari</label>
-            <input type="date" class="form-control" name="target_hari" required>
-          </div>
-          <div class="mb-3">
-            <label for="deskripsi1" class="form-label">Deskripsi 1</label>
-            <textarea class="form-control" name="deskripsi1" rows="3" required></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="gambar1" class="form-label">Gambar 1</label>
-            <input class="form-control" type="file" name="gambar1" required>
-          </div>
-          <div class="mb-3">
-            <label for="gambar2" class="form-label">Gambar 2</label>
-            <input class="form-control" type="file" name="gambar2" required>
-          </div>
-          <div class="mb-3">
-            <label for="gambar3" class="form-label">Gambar 3</label>
-            <input class="form-control" type="file" name="gambar3" required>
-          </div>
-          <div class="mb-3">
-            <label for="gambar4" class="form-label">Gambar 4</label>
-            <input class="form-control" type="file" name="gambar4" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
-
-</html>

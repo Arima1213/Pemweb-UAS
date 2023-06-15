@@ -100,11 +100,3 @@ body {
     -o-transform: translateY(20px);
   }
 }
-
-.cardhoverbenefit .hidden-text {
-  transition: 500px;
-  display: none;
-}
-.cardhoverbenefit:hover .hidden-text {
-  display: block;
-}

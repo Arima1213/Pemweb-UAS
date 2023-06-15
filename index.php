@@ -240,291 +240,301 @@ require_once "koneksi.php";
             </div>
           </div>
         </div>
-        <form action="donationspage.php" method="post">'
-          <input name="donasi_id" type="text" hidden value="8">
-          <div class="row">
-            <div class="col-12 col-md-12 col-lg-4">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 p-3">
+            <form action="donationspage.php" method="post">
               <div class="card text-white text-center bg-dark pb-2">
                 <div class="card-body">
+                  <input name="donasi_id" type="text" hidden value="8">
                   <i class="bi bi-laptop"></i>
                   <h4 class="card-title">Patungan Pohon Bantu Hijaukan Bumi</h4>
                   <p class=""> Hai Orang Baik dan teman-teman Carat Indonesia! Apa kabar?
-                    Aku doakan kalian senantiasa dalam keadaan sehat dan bahagia ya. Sebelumnya, perkenalkan aku Jenifer Wirawan.
+                    Aku doakan kalian senantiasa dalam keadaan sehat dan bahagia ya. aku Jenifer Wirawan.
                     Sangat senang berkesempatan mengajak kalian semua ikut project kebaikan ini.</p>
                   <button type="submit" class="btn bg-warning text-dark">Read More</button>
                 </div>
               </div>
-            </div>
-        </form>
-        <div class="col-12 col-md-12 col-lg-4">
-          <div class="card text-white text-center bg-dark pb-2">
-            <div class="card-body">
-              <i class="bi bi-journal"></i>
-              <h4 class="card-title">Infaq Beras Untuk Fakir ,Miskin & Penghafal AlQuran</h4>
-              <p class="">Perkenalkan, Program Infaq Beras Penghafal AlQuran ini merupakan Support Beras untuk Fakir, Miskin dan para Santri Penghafal AlQuran Ma’had ‘Aly Pondok Quran untuk kebutuhan pokok sehari - hari. </p><button class="btn bg-warning text-dark">Read More</button>
-            </div>
+            </form>
           </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-4">
-          <div class="card text-white text-center bg-dark pb-2">
-            <div class="card-body">
-              <i class="bi bi-intersect"></i>
-              <h4 class="card-title">Infaq Yatim: Kebahagiaan untuk 500 anak-anak Yatim </h4>
-              <p class="">Tak jarang juga anak-anak yatim dhuafa harus menanggung beban yang lebih berat lagi karena terpaksa tidak bisa menggapai keinginan dan cita-citanya dan harus bekerja demi bisa membantu memenuhi kebutuhan sehari-harinya.</p><button class="btn bg-warning text-dark">Read More</button>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  </section><!-- services section Ends -->
-
-
-
-  <section class="about section-padding" id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-12 col-12">
-          <div class="about-img"><img alt="" class="img-fluid" src="src/img_carousel/3(5).jpg"></div>
-        </div>
-        <div class="col-lg-8 col-md-12 col-12">
-          <div class="about-text">
-            <h2> Berbagi International </h2>
-            <p>Berbagi International is a powerful global movement committed to nurturing compassion, empathy, and united efforts towards creating a brighter and more harmonious world.</p>
-            <p>At Berbagi International, we believe in the transformative power of kindness and the profound impact it can have on individuals, communities, and societies at large. Our initiative serves as a catalyst for positive change, inspiring people from all walks of life to come together and make a meaningful difference.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- about section Ends -->
-
-
-  <!-- portfolio strats -->
-  <section class="portfolio section-padding" id="benefits">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-header text-center pb-5">
-            <h2>Benefits</h2>
-            <p>Donasi memiliki banyak manfaat, baik bagi mereka yang menerima bantuan maupun bagi diri Anda sendiri. Dengan berdonasi, Anda dapat memberikan perubahan positif dalam hidup orang-orang dan berperan aktif dalam membangun masyarakat yang lebih baik.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <div class="card text-light cardhoverbenefit text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4">
-                <img alt="" class="" style="height: 80px;" src="src/img_project/charity.png">
+          <div class="col-12 col-md-6 col-lg-4 p-3">
+            <form action="donationspage.php" method="post">
+              <div class="card text-white text-center bg-dark pb-2">
+                <div class="card-body">
+                  <input name="donasi_id" type="text" hidden value="10">
+                  <i class="bi bi-journal"></i>
+                  <h4 class="card-title">Infaq Beras Untuk Fakir ,Miskin & Penghafal AlQuran</h4>
+                  <p class="">Perkenalkan, Program Infaq Beras Penghafal AlQuran ini merupakan Support Beras untuk Fakir, Miskin dan para Santri Penghafal AlQuran Ma’had ‘Aly Pondok Quran untuk kebutuhan pokok sehari - hari. </p>
+                  <button class="btn bg-warning text-dark">Read More</button>
+                </div>
               </div>
-              <h3 class="card-title">Bantuan kepada yang Membutuhkan</h3>
-              <p class="card-text">Dengan berdonasi, Anda memiliki kesempatan untuk memberikan bantuan kepada mereka yang membutuhkan. Setiap sumbangan yang Anda berikan dapat memberikan harapan dan perubahan positif dalam kehidupan mereka. Bersama-sama, kita dapat mengatasi tantangan yang dihadapi oleh mereka yang kurang beruntung dan memberikan mereka kesempatan yang lebih baik untuk masa depan yang lebih cerah.</p>
-            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card text-light cardhoverbenefit text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4">
-                <img alt="" class="" style="height: 80px;" src="src/img_project/social-security.png">
+          </form>
+          <div class="col-12 col-md-6 col-lg-4 p-3">
+            <form action="donationspage.php" method="post">
+              <div class="card text-white text-center bg-dark pb-2">
+                <div class="card-body">
+                  <input name="donasi_id" type="text" hidden value="9">
+                  <i class="bi bi-intersect"></i>
+                  <h4 class="card-title">Infaq Yatim: Kebahagiaan untuk 500 anak-anak Yatim </h4>
+                  <p class="">Tak jarang juga anak-anak yatim dhuafa harus menanggung beban yang lebih berat lagi karena terpaksa tidak bisa menggapai keinginan dan cita-citanya dan harus bekerja demi bisa membantu memenuhi kebutuhan sehari-harinya.</p>
+                  <button class="btn bg-warning text-dark">Read More</button>
+                </div>
               </div>
-              <h3 class="card-title">Mengurangi Kesenjangan Sosial</h3>
-              <p class="card-text">Donasi adalah langkah nyata dalam mengurangi kesenjangan sosial. Dengan memberikan sumbangan, Anda ikut berperan dalam membangun masyarakat yang lebih adil dan merata. Setiap kontribusi Anda membantu menciptakan akses dan peluang yang lebih baik bagi mereka yang kurang beruntung. Bersama-sama, kita dapat mencapai kesetaraan dan keadilan sosial.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card text-light cardhoverbenefit text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4">
-                <img alt="" class="" style="height: 80px;" src="src/img_project/certificate(1).png">
-              </div>
-              <h3 class="card-title">Sertifikat Penghargaan</h3>
-              <p class="card-text">kesempatan untuk mendapatkan sertifikat penghargaan atas kontribusi Anda. Dengan melakukan donasi, Anda diakui atas upaya dan kebaikan yang telah Anda berikan. Sertifikat ini bukan hanya sebagai bentuk apresiasi, tetapi juga sebagai pengingat akan peran penting Anda dalam membantu mereka yang membutuhkan. Sertifikat ini dapat menjadi bukti nyata dari dampak positif yang telah Anda ciptakan dalam membantu menciptakan perubahan yang lebih baik.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- portfolio ends -->
-
-
-  <!-- Section: Cara Berdonasi -->
-  <section class="portfolio section-padding" id="benefits">
-    <div class="container">
-      <div class="row mt-4">
-        <div class="col-md-12">
-          <div class="section-header text-center pb-5">
-            <h2>Cara Berdonasi</h2>
-            <p>Ikuti langkah-langkah berikut untuk berdonasi di Takaful</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <div class="card text-light text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (1).png"></div>
-              <p>1. Dari halaman web, gulir ke bawah hingga menemukan proyek yang ingin didonasikan</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card text-light text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (2).png"></div>
-              <p>2. Pilih salah satu proyek dan klik tombol "Donasi"</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card text-light text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (3).png"></div>
-              <p>3. Akan disediakan informasi terkait proyek donasi yang dipilih</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-12 col-md-4">
-          <div class="card text-light text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (4).png"></div>
-              <p>4. Klik tombol "Donasi Sekarang"</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card text-light text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (5).png"></div>
-              <p>5. Akan muncul sebuah formulir, lengkapi formulir tersebut dengan informasi yang diminta</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card text-light text-center bg-white pb-2">
-            <div class="card-body text-dark">
-              <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (6).png"></div>
-              <p>6. Setelah melengkapi formulir, klik tombol "Submit"</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Akhir Section: Cara Berdonasi -->
-
-
-
-
-
-  <!-- team starts -->
-  <section class="team section-padding" id="team">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-header text-center pb-5">
-            <h2>Our Team</h2>
-            <p>Kami adalah tim pengembang website ini yang terdiri dari dua orang yang berdedikasi untuk memberikan pengalaman terbaik kepada pengguna kami.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-3">
-            <div class="card text-center">
-              <div class="card-body">
-                <img alt="" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover; object-position: center; border-radius: 50%;" src="src/img_project/ari.jpg">
-                <h3 class="card-title py-2 name">Ari Mahendra</h3>
-                <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
-                <p class="card-text">Front-end Appreciate</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="card text-center">
-              <div class="card-body">
-                <img alt="" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover; object-position: center; border-radius: 50%;" src="src/img_project/denokfix.jpg">
-                <h3 class="card-title py-2 name">Denny Ariyana</h3>
-                <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
-                <p class="card-text">UI/UX Designer</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- team ends -->
-
-
-  <section class="py-5 my-5 ">
-    <div class="container">
-      <div class="testimonial row">
-        <div class="testimonial-content col-7 mx-auto text-center">
-          <img class="profile-img mb-3" data-bs-toggle="modal" data-bs-target="#changeProfileModal" style="width: 150px; height: 150px; object-fit: cover; object-position: center; border-radius: 100%;" alt="" src="src/img_project/Gambar WhatsApp 2023-06-12 pukul 16.20.02.jpg">
-          <p>“Kami mengundang Anda untuk ikut serta dalam proyek ini dengan memberikan sumbangan atau donasi. Setiap bantuan yang diberikan akan digunakan secara efisien untuk memberikan bantuan yang tepat sasaran kepada mereka yang membutuhkan. Bersama-sama, kita dapat memberikan harapan dan kehidupan yang lebih baik bagi mereka yang sedang menghadapi kesulitan.”</p>
-          <p>~Denny ariyana</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Mulai Kontak -->
-  <section class="contact section-padding" id="contact">
-    <div class="container mt-5 mb-5">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-header text-center pb-5">
-            <h2>Hubungi Kami</h2>
-            <p>Terima kasih atas perhatian dan partisipasi Anda. Bersama-sama, mari kita berbuat baik dan memberikan dampak positif bagi kehidupan mereka yang membutuhkan.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="contact-info">
-            <h3>Informasi Kontak</h3>
-            <p>Jika Anda memiliki pertanyaan atau ingin terlibat dalam inisiatif kami, jangan ragu untuk menghubungi kami. Kami senang mendengar dari Anda!</p>
-            <ul>
-              <li><i class="fa fa-map-marker my-1"></i>Surabaya, Jawa Timur, Indonesia</li>
-              <li><i class="fa fa-envelope my-1"></i>TakafulIndonesia@gmail.com</li>
-              <li><i class="fa fa-phone my-1"></i>+62 757 456 7890</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="contact-form">
-            <h3>Kirim Pesan</h3>
-            <form>
-              <div class="form-group my-1">
-                <input type="text" class="form-control" placeholder="Nama Anda" required>
-              </div>
-              <div class="form-group my-1">
-                <input type="email" class="form-control" placeholder="Email Anda" required>
-              </div>
-              <div class="form-group my-1">
-                <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
-              </div>
-              <button type="submit my-1" class="btn btn-primary">Kirim Pesan</button>
             </form>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Kontak selesai -->
+    </section><!-- services section Ends -->
 
-  <!-- footer starts -->
-  <footer class="bg-dark p-2 text-center">
-    <div class="container">
-      <p class="text-white">All Rights Reserved &copy; 2023 by TakafulIndonesia</p>
-    </div>
-  </footer>
-  <!-- footer ends -->
+
+
+    <section class="about section-padding" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="about-img"><img alt="" class="img-fluid" src="src/img_carousel/3(5).jpg"></div>
+          </div>
+          <div class="col-lg-8 col-md-12 col-12">
+            <div class="about-text">
+              <h2> Berbagi International </h2>
+              <p>Berbagi International is a powerful global movement committed to nurturing compassion, empathy, and united efforts towards creating a brighter and more harmonious world.</p>
+              <p>At Berbagi International, we believe in the transformative power of kindness and the profound impact it can have on individuals, communities, and societies at large. Our initiative serves as a catalyst for positive change, inspiring people from all walks of life to come together and make a meaningful difference.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- about section Ends -->
+
+
+    <!-- portfolio strats -->
+    <section class="portfolio section-padding" id="benefit">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5">
+              <h2>Benefits</h2>
+              <p>Donasi memiliki banyak manfaat, baik bagi mereka yang menerima bantuan maupun bagi diri Anda sendiri. Dengan berdonasi, Anda dapat memberikan perubahan positif dalam hidup orang-orang dan berperan aktif dalam membangun masyarakat yang lebih baik.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="card text-light cardhoverbenefit text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img alt="" class="" style="height: 80px;" src="src/img_project/charity.png">
+                </div>
+                <h3 class="card-title">Bantuan kepada yang Membutuhkan</h3>
+                <p class="card-text">Dengan berdonasi, Anda memiliki kesempatan untuk memberikan bantuan kepada mereka yang membutuhkan. Setiap sumbangan yang Anda berikan dapat memberikan harapan dan perubahan positif dalam kehidupan mereka. Bersama-sama, kita dapat mengatasi tantangan yang dihadapi oleh mereka yang kurang beruntung dan memberikan mereka kesempatan yang lebih baik untuk masa depan yang lebih cerah.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card text-light cardhoverbenefit text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img alt="" class="" style="height: 80px;" src="src/img_project/social-security.png">
+                </div>
+                <h3 class="card-title">Mengurangi Kesenjangan Sosial</h3>
+                <p class="card-text">Donasi adalah langkah nyata dalam mengurangi kesenjangan sosial. Dengan memberikan sumbangan, Anda ikut berperan dalam membangun masyarakat yang lebih adil dan merata. Setiap kontribusi Anda membantu menciptakan akses dan peluang yang lebih baik bagi mereka yang kurang beruntung. Bersama-sama, kita dapat mencapai kesetaraan dan keadilan sosial.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card text-light cardhoverbenefit text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img alt="" class="" style="height: 80px;" src="src/img_project/certificate(1).png">
+                </div>
+                <h3 class="card-title">Sertifikat Penghargaan</h3>
+                <p class="card-text">kesempatan untuk mendapatkan sertifikat penghargaan atas kontribusi Anda. Dengan melakukan donasi, Anda diakui atas upaya dan kebaikan yang telah Anda berikan. Sertifikat ini bukan hanya sebagai bentuk apresiasi, tetapi juga sebagai pengingat akan peran penting Anda dalam membantu mereka yang membutuhkan. Sertifikat ini dapat menjadi bukti nyata dari dampak positif yang telah Anda ciptakan dalam membantu menciptakan perubahan yang lebih baik.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- portfolio ends -->
+
+
+    <!-- Section: Cara Berdonasi -->
+    <section class="portfolio section-padding" id="guide">
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5">
+              <h2>Cara Berdonasi</h2>
+              <p>Ikuti langkah-langkah berikut untuk berdonasi di Takaful</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="card text-light text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (1).png"></div>
+                <p>1. Dari halaman web, gulir ke bawah hingga menemukan proyek yang ingin didonasikan</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card text-light text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (2).png"></div>
+                <p>2. Pilih salah satu proyek dan klik tombol "Donasi"</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card text-light text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (3).png"></div>
+                <p>3. Akan disediakan informasi terkait proyek donasi yang dipilih</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 col-md-4">
+            <div class="card text-light text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (4).png"></div>
+                <p>4. Klik tombol "Donasi Sekarang"</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card text-light text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (5).png"></div>
+                <p>5. Akan muncul sebuah formulir, lengkapi formulir tersebut dengan informasi yang diminta</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card text-light text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4"><img alt="" class="img-fluid" src="src/img_project/guide (6).png"></div>
+                <p>6. Setelah melengkapi formulir, klik tombol "Submit"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Section: Cara Berdonasi -->
+
+
+
+
+
+    <!-- team starts -->
+    <section class="team section-padding" id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5">
+              <h2>Our Team</h2>
+              <p>Kami adalah tim pengembang website ini yang terdiri dari dua orang yang berdedikasi untuk memberikan pengalaman terbaik kepada pengguna kami.</p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <div class="card text-center">
+                <div class="card-body">
+                  <img alt="" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover; object-position: center; border-radius: 50%;" src="src/img_project/ari.jpg">
+                  <h3 class="card-title py-2 name">Ari Mahendra</h3>
+                  <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
+                  <p class="card-text">Front-end Appreciate</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card text-center">
+                <div class="card-body">
+                  <img alt="" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover; object-position: center; border-radius: 50%;" src="src/img_project/denokfix.jpg">
+                  <h3 class="card-title py-2 name">Denny Ariyana</h3>
+                  <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
+                  <p class="card-text">UI/UX Designer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- team ends -->
+
+
+    <section class="py-5 my-5 ">
+      <div class="container">
+        <div class="testimonial row">
+          <div class="testimonial-content col-7 mx-auto text-center">
+            <img class="profile-img mb-3" data-bs-toggle="modal" data-bs-target="#changeProfileModal" style="width: 150px; height: 150px; object-fit: cover; object-position: center; border-radius: 100%;" alt="" src="src/img_project/Gambar WhatsApp 2023-06-12 pukul 16.20.02.jpg">
+            <p>“Kami mengundang Anda untuk ikut serta dalam proyek ini dengan memberikan sumbangan atau donasi. Setiap bantuan yang diberikan akan digunakan secara efisien untuk memberikan bantuan yang tepat sasaran kepada mereka yang membutuhkan. Bersama-sama, kita dapat memberikan harapan dan kehidupan yang lebih baik bagi mereka yang sedang menghadapi kesulitan.”</p>
+            <p>~Denny ariyana</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Mulai Kontak -->
+    <section class="contact section-padding" id="contact">
+      <div class="container mt-5 mb-5">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5">
+              <h2>Hubungi Kami</h2>
+              <p>Terima kasih atas perhatian dan partisipasi Anda. Bersama-sama, mari kita berbuat baik dan memberikan dampak positif bagi kehidupan mereka yang membutuhkan.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="contact-info">
+              <h3>Informasi Kontak</h3>
+              <p>Jika Anda memiliki pertanyaan atau ingin terlibat dalam inisiatif kami, jangan ragu untuk menghubungi kami. Kami senang mendengar dari Anda!</p>
+              <ul>
+                <li><i class="fa fa-map-marker my-1"></i>Surabaya, Jawa Timur, Indonesia</li>
+                <li><i class="fa fa-envelope my-1"></i>TakafulIndonesia@gmail.com</li>
+                <li><i class="fa fa-phone my-1"></i>+62 757 456 7890</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-form">
+              <h3>Kirim Pesan</h3>
+              <form>
+                <div class="form-group my-1">
+                  <input type="text" class="form-control" placeholder="Nama Anda" required>
+                </div>
+                <div class="form-group my-1">
+                  <input type="email" class="form-control" placeholder="Email Anda" required>
+                </div>
+                <div class="form-group my-1">
+                  <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
+                </div>
+                <button type="submit my-1" class="btn btn-primary">Kirim Pesan</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Kontak selesai -->
+
+    <!-- footer starts -->
+    <footer class="bg-dark p-2 text-center">
+      <div class="container">
+        <p class="text-white">All Rights Reserved &copy; 2023 by TakafulIndonesia</p>
+      </div>
+    </footer>
+    <!-- footer ends -->
 
   </div>
   <script>
+    AOS.init();
+
     function previewFoto(event) {
       var input = event.target;
       var reader = new FileReader();
@@ -534,11 +544,18 @@ require_once "koneksi.php";
       };
       reader.readAsDataURL(input.files[0]);
     }
+
+    // Smooth scroll to anchor links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
   <script src="bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
 </body>
