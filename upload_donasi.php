@@ -5,7 +5,7 @@ require_once "koneksi.php";
 // Memproses data yang dikirim melalui form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Validasi jika data telah terisi
-  if (!empty($_POST["title"]) && !empty($_POST["target_donasi"]) && $_POST["uang_donasi"] >= 0 && !empty($_POST["target_hari"]) && !empty($_POST["deskripsi1"])) {
+  if (!empty($_POST["title"]) && !empty($_POST["target_donasi"]) && $_POST["uang_donasi"] >= 0  && !empty($_POST["deskripsi1"])) {
     $title = $_POST["title"];
     $target_donasi = $_POST["target_donasi"];
     $uang_donasi = $_POST["uang_donasi"];
@@ -46,19 +46,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result_check = $stmt_check->get_result();
 
     if ($result_check->num_rows > 0) {
-      $notification = "Data sudah ada.";
+      echo "Data sudah ada.";
     } else {
       // Memasukkan data ke dalam tabel open_donasi
-      $query = "INSERT INTO open_donasi (thumbnail, title, target_donasi, uang_donasi, target_hari, deskripsi1, gambar1, gambar2, gambar3, gambar4, tgl_dibuat) 
-          VALUES($nama_thumbnail, $title, $target_donasi, $uang_donasi, $target_hari_sql, $deskripsi1, $nama_gambar1, $nama_gambar2, $nama_gambar3, $nama_gambar4, $tgl_dibuat)";
+      $query = "INSERT INTO db_takaful.open_donasi (thumbnail, title, target_donasi, uang_donasi, target_hari, deskripsi1, gambar1, gambar2, gambar3, gambar4, tgl_dibuat)
+                VALUES('$nama_thumbnail', '$title', $target_donasi, $uang_donasi, '$target_hari_sql', '$deskripsi1', '$nama_gambar1', '$nama_gambar2', '$nama_gambar3', '$nama_gambar4', '$tgl_dibuat')";
       $query_run = mysqli_query($conn, $query);
 
       if ($query_run) {
-        $notification = "Data berhasil disimpan.";
+        echo "Data berhasil disimpan.";
         header('Location: admin.php');
         exit();
       } else {
-        $notification = "Terjadi kesalahan: " . $stmt->error;
+        echo "Terjadi kesalahan: " . $stmt->error;
       }
 
       $stmt->close();
@@ -66,6 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt_check->close();
   } else {
-    $notification = "Semua field harus diisi.";
+    echo "Semua field harus diisi.";
   }
 }
