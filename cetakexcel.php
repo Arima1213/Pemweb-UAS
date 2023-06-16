@@ -12,12 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $donasi_id = $_POST["donasi_id"];
 
 
-
         // Query untuk mengambil data riwayat donasi berdasarkan donasi_id
-        $stmt = $conn->prepare("SELECT riwayat_id, user_id, nama, nominal, tgl_lengkap, donasi_id, metode_pembayaran FROM db_takaful.riwayat_donasi WHERE donasi_id = ?");
-        $stmt->bind_param("i", $donasi_id);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $query = "SELECT riwayat_id, user_id, nama, nominal, tgl_lengkap, donasi_id, metode_pembayaran FROM riwayat_donasi WHERE donasi_id = $donasi_id";
+        $result = mysqli_query($conn, $query);
 
         // Membuat objek Spreadsheet
         $spreadsheet = new Spreadsheet();
@@ -34,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Mengisi data pada baris-baris selanjutnya
         $row = 2;
-        while ($row_data = $result->fetch_assoc()) {
+        while ($row_data = mysqli_fetch_assoc($result)) {
             $sheet->setCellValue('A' . $row, $row_data['riwayat_id']);
             $sheet->setCellValue('B' . $row, $row_data['user_id']);
             $sheet->setCellValue('C' . $row, $row_data['nama']);

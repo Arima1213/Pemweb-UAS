@@ -37,13 +37,11 @@ if ($resultUserId->num_rows > 0) {
 $username = $_SESSION['username']; // Ganti dengan cara Anda untuk mendapatkan username
 
 // Mendapatkan data pengguna dari database
-$stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
-$stmt->bind_param("s", $username);
-$stmt->execute();
-$result = $stmt->get_result();
+$queryselectuser = "SELECT * FROM users WHERE username = '$username'";
+$resultqueryselectuser = $conn->query($queryselectuser);
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
+if ($resultqueryselectuser->num_rows > 0) {
+    $row = $resultqueryselectuser->fetch_assoc();
     $user_id = $row['user_id'];
     $username = $row['username'];
     $nama = $row['nama'];
@@ -56,13 +54,11 @@ if ($result->num_rows > 0) {
 
 
 // Mendapatkan data pengguna dari database
-$stmtt = $conn->prepare("SELECT total_donasi FROM db_takaful.users WHERE username = ?");
-$stmtt->bind_param("s", $username);
-$stmtt->execute();
-$result = $stmtt->get_result();
+$queryuserr = "SELECT total_donasi FROM users WHERE username = '$username'";
+$resultqueryuserr = $conn->query($queryuserr);
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
+if ($resultqueryuserr->num_rows > 0) {
+    $row = $resultqueryuserr->fetch_assoc();
     $total_donasi = $row['total_donasi'];
 } else {
     echo 'Data pengguna tidak ditemukan';
@@ -76,8 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomortelepon = $_POST["nomortelepon"];
 
     // Perbarui data profil pengguna di database
-    $update_stmt = $conn->prepare("UPDATE users SET nama  = ? ,nomor_telepon = ? WHERE user_id = ?");
-    $update_stmt->bind_param("ssi", $new_nama, $nomortelepon, $user_id);
+    $queryupdate = $conn->prepare("UPDATE users SET nama  = $new_nama ,nomor_telepon = $nomortelepon WHERE user_id =  $user_id");
+    $dataku = mysqli_query($conn, $queryupdate);
     if ($update_stmt->execute()) {
         echo "Profil berhasil diperbarui";
         $nama = $new_nama;
@@ -87,9 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Terjadi kesalahan saat memperbarui profil: " . $update_stmt->error;
     }
 }
-
-$stmt->close();
-$stmtt->close();
 
 
 ?>
@@ -203,13 +196,9 @@ $stmtt->close();
                         <?php
                         require_once "koneksi.php";
                         // Query untuk mengambil data user berdasarkan username
-                        $stmt = $conn->prepare("SELECT foto_profil FROM db_takaful.users WHERE username = ?");
-                        $stmt->bind_param("s", $username);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
 
-                        if ($result->num_rows > 0) {
-                            $row = $result->fetch_assoc();
+                        if ($resultqueryselectuser->num_rows > 0) {
+                            $row = $resultqueryselectuser->fetch_assoc();
                             $foto_profil = $row['foto_profil'];
 
                             // Gunakan nilai foto_profil dalam tag <img> atau tempat lain yang sesuai

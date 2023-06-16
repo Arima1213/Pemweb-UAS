@@ -40,31 +40,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     move_uploaded_file($sumber_gambar4, $folder_images . $nama_gambar4);
 
     // Memeriksa apakah data sudah ada sebelumnya
-    $stmt_check = $conn->prepare("SELECT * FROM open_donasi WHERE title = ?");
-    $stmt_check->bind_param("s", $title);
-    $stmt_check->execute();
-    $result_check = $stmt_check->get_result();
+    $query_check = "SELECT * FROM open_donasi WHERE title = '$title'";
+    $result_query_check = mysqli_query($conn, $query_check);
 
-    if ($result_check->num_rows > 0) {
+    if ($result_query_check->num_rows > 0) {
       echo "Data sudah ada.";
     } else {
       // Memasukkan data ke dalam tabel open_donasi
-      $query = "INSERT INTO db_takaful.open_donasi (thumbnail, title, target_donasi, uang_donasi, target_hari, deskripsi1, gambar1, gambar2, gambar3, gambar4, tgl_dibuat)
-                VALUES('$nama_thumbnail', '$title', $target_donasi, $uang_donasi, '$target_hari_sql', '$deskripsi1', '$nama_gambar1', '$nama_gambar2', '$nama_gambar3', '$nama_gambar4', '$tgl_dibuat')";
-      $query_run = mysqli_query($conn, $query);
+      $query_insert = "INSERT INTO open_donasi (thumbnail, title, target_donasi, uang_donasi, target_hari, deskripsi1, gambar1, gambar2, gambar3, gambar4, tgl_dibuat)
+                VALUES('$nama_thumbnail', '$title', '$target_donasi', '$uang_donasi', '$target_hari_sql', '$deskripsi1', '$nama_gambar1', '$nama_gambar2', '$nama_gambar3', '$nama_gambar4', '$tgl_dibuat')";
+      $result_query_insert = mysqli_query($conn, $query_insert);
 
-      if ($query_run) {
-        echo "Data berhasil disimpan.";
+      if ($result_query_insert) {
         header('Location: admin.php');
         exit();
       } else {
-        echo "Terjadi kesalahan: " . $stmt->error;
+        echo "Terjadi kesalahan: ";
       }
-
-      $stmt->close();
     }
-
-    $stmt_check->close();
   } else {
     echo "Semua field harus diisi.";
   }

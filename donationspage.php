@@ -80,34 +80,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $nama_foto = $_FILES["foto"]["name"];
             $sumber_foto = $_FILES["foto"]["tmp_name"];
             move_uploaded_file($sumber_foto, $folder . $nama_foto);
-
             // Memasukkan data ke dalam tabel riwayat_donasi
-            $stmt = $conn->prepare("INSERT INTO db_takaful.riwayat_donasi
-            (user_id, nama, nominal, tgl_lengkap, donasi_id, metode_pembayaran, bukti_transfer, doa) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssssss", $user_id, $nama, $nominal, $tgl_dibuat, $donasi_id, $metode, $nama_foto, $doa);
+            $query_insert = "INSERT INTO riwayat_donasi (user_id, nama, nominal, tgl_lengkap, donasi_id, metode_pembayaran, bukti_transfer, doa) 
+            VALUES ($user_id, '$nama', $nominal, '$tgl_dibuat', $donasi_id, '$metode', '$nama_foto', '$doa')";
+            $result_insert = mysqli_query($conn, $query_insert);
 
-            if ($stmt->execute()) {
+            if ($result_insert) {
                 $notification = "Data berhasil disimpan.";
 
                 // Update tabel open_donasi untuk menambahkan nilai nominal sebelumnya
-                $stmt = $conn->prepare("UPDATE db_takaful.open_donasi SET uang_donasi = uang_donasi + ? WHERE donasi_id = ?");
-                $stmt->bind_param("si", $nominal, $donasi_id);
-                $stmt->execute();
+                $query_update_uangdonasi = "UPDATE open_donasi SET uang_donasi = uang_donasi + $uang_donasi WHERE donasi_id = $donasi_id";
+                $result_update_uangdonasi = mysqli_query($conn, $query_update_uangdonasi);
 
-                $stmt = $conn->prepare("UPDATE db_takaful.users SET total_donasi = total_donasi + ? WHERE username = ?");
-                $stmt->bind_param("si", $nominal, $username);
-                $stmt->execute();
+                $query_update_totaldonasi = "UPDATE users SET total_donasi = total_donasi + $uang_donasi WHERE username = '$username'";
+                $result_update_totaldonasi = mysqli_query($conn, $query_update_totaldonasi);
+
                 header("Location: index.php#urgent");
                 exit();
             } else {
-                $notification = "Terjadi kesalahan: " . $stmt->error;
+                $notification = "Terjadi kesalahan: " . mysqli_error($conn);
             }
         } else {
 
             $notification = "Tidak ada data";
         }
-    } else {
     }
 }
 
@@ -153,10 +149,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a class="nav-link" href="index.php#project">Project</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php#benefit">Benfits</a>
+                        <a class="nav-link" href="index.php#benefit">Benefits</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php#guide">Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.php">Faq</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profilepage.php">
@@ -169,19 +168,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <?php
 
                             // Query untuk mengambil data user berdasarkan username
-                            $stmt = $conn->prepare("SELECT foto_profil FROM db_takaful.users WHERE username = ?");
-                            $stmt->bind_param("s", $username);
-                            $stmt->execute();
-                            $result = $stmt->get_result();
+                            $query = "SELECT foto_profil FROM users WHERE username = '$username'";
+                            $result = mysqli_query($conn, $query);
 
-                            if ($result->num_rows > 0) {
-                                $row = $result->fetch_assoc();
-                                $foto_profil = $row['foto_profil'];
+                            if ($result) {
+                                if (mysqli_num_rows($result) > 0) {
+                                    $row = mysqli_fetch_assoc($result);
+                                    $foto_profil = $row['foto_profil'];
 
-                                // Gunakan nilai foto_profil dalam tag <img> atau tempat lain yang sesuai
-                                echo '<img src="src/img_profil_user/' . $foto_profil . '" alt="Foto Profil" width="30" height="30" class="rounded-circle">';
+                                    // Gunakan nilai foto_profil dalam tag <img> atau tempat lain yang sesuai
+                                    echo '<img src="src/img_profil_user/' . $foto_profil . '" alt="Foto Profil" width="30" height="30" class="rounded-circle">';
+                                } else {
+                                    echo "Data tidak ada";
+                                }
                             } else {
-                                echo "data tidak ada";
+                                echo "Query execution failed: " . mysqli_error($conn);
                             }
                             ?>
                         </a>
@@ -190,6 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </nav>
+
 
 
 

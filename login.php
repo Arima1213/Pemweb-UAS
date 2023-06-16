@@ -8,13 +8,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   if ($username == "admin" && $password == "admin123") {
     $_SESSION['username'] = $username;
     $_SESSION['nama'] = $username;
+
     header('Location: admin.php');
     exit();
   } else {
     require_once "koneksi.php";
 
     // Prepare the SQL statement
-    $stmt = $conn->prepare("SELECT password FROM users WHERE username=?");
+    $stmt = $conn->prepare("SELECT password, nama, user_id FROM users WHERE username=?");
     $stmt->bind_param("s", $username);
 
     // Execute the SQL statement
@@ -26,7 +27,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-      $stmt->bind_result($hashed_password);
+      $stmt->bind_result($hashed_password, $nama, $user_id);
       $stmt->fetch();
 
       if ($password == $hashed_password) {
@@ -37,7 +38,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         header('Location: index.php');
         exit();
       } else {
-        $error_message = "Invalid password $hashed_password $password";
+        $error_message = "Invalid password";
       }
     } else {
       $error_message = "Invalid username or password";

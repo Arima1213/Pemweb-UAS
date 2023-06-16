@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
     $nama = $row['nama'];
 }
 
-$font = "adelia.ttf";
+$font = "./adelia.ttf";
 $image = imagecreatefrompng("./src/sertif/Certificate.png");
 $textColour = imagecolorallocate($image, 0, 0, 0);
 $name = $nama;

@@ -68,19 +68,21 @@ require_once "koneksi.php";
               <?php
 
               // Query untuk mengambil data user berdasarkan username
-              $stmt = $conn->prepare("SELECT foto_profil FROM db_takaful.users WHERE username = ?");
-              $stmt->bind_param("s", $username);
-              $stmt->execute();
-              $result = $stmt->get_result();
+              $query = "SELECT foto_profil FROM users WHERE username = '$username'";
+              $result = mysqli_query($conn, $query);
 
-              if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                $foto_profil = $row['foto_profil'];
+              if ($result) {
+                if (mysqli_num_rows($result) > 0) {
+                  $row = mysqli_fetch_assoc($result);
+                  $foto_profil = $row['foto_profil'];
 
-                // Gunakan nilai foto_profil dalam tag <img> atau tempat lain yang sesuai
-                echo '<img src="src/img_profil_user/' . $foto_profil . '" alt="Foto Profil" width="30" height="30" class="rounded-circle">';
+                  // Gunakan nilai foto_profil dalam tag <img> atau tempat lain yang sesuai
+                  echo '<img src="src/img_profil_user/' . $foto_profil . '" alt="Foto Profil" width="30" height="30" class="rounded-circle">';
+                } else {
+                  echo "Data tidak ada";
+                }
               } else {
-                echo "data tidak ada";
+                echo "Query execution failed: " . mysqli_error($conn);
               }
               ?>
             </a>

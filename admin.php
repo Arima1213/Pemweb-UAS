@@ -53,17 +53,17 @@ $resultData = $conn->query($sqlData);
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.php"><span class="text-warning">TAKAFUL</span>INDONESIA</a>
+            <a class="navbar-brand" href="login.php"><span class="text-warning">TAKAFUL</span>INDONESIA</a>
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Dashboard</a>
+                        <a class="nav-link" href="#home">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php#about">Riwayat</a>
+                        <a class="nav-link" href="#list">Riwayat</a>
                     </li>
                     <li class="nav-item">
                         <a href="login.php">
@@ -76,7 +76,7 @@ $resultData = $conn->query($sqlData);
     </nav>
 
 
-    <div class="container" style="margin-top: 80px;">
+    <div class="container" style="margin-top: 80px;" id="home">
         <div class=" row">
             <?php if (isset($notification)) : ?>
                 <div class="alert alert-info mt-3">
@@ -137,7 +137,7 @@ $resultData = $conn->query($sqlData);
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="list">
             <h3 class="my-4">List projek Donasi</h3>
             <?php
 
